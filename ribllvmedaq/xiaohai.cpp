@@ -111,20 +111,14 @@ int main(int argc,char **argv)
       nb = fChain->GetEntry(jentry);
       nbytes += nb;
 
-      /// some tests
-      if (vmod108->chdata[25] > 500 && vmod108->chdata[26] > 500)
-	{
-	  testhis->Fill(vmod108->chdata[26], vmod108->chdata[25]);
-	}
-      // for (int i = 0; i != vmod104->MaxChannel; ++i)
-      // 	{
+      for (int i = 0; i != vmod104->MaxChannel; ++i)
+      	{
 	 
-      // 	}
+      	}
     }
   TFile *saveFile = new TFile("saveFile.root", "RECREATE");
   testhis->Write();
   saveFile->Write();
 
   return 0;
-
 }
